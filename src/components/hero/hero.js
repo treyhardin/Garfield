@@ -22,6 +22,7 @@ export default function Hero() {
                     <Environment preset="sunset" background />
                 </Suspense>
 
+
             </Canvas>
         </section>
     )
