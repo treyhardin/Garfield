@@ -30,14 +30,14 @@ export default function Hero() {
             let mousePositionY = (e.clientY / window.innerHeight) * 2 - 1
 
             gsap.to(cameraGroup.current.rotation, {
-                duration: 20,
+                duration: 1,
                 y: mousePositionX * cameraMovementSpeedX + cameraOffsetY,
                 ease: "power3.easeOut"
             })
 
             if(camera.current) {
                 gsap.to(camera.current.rotation, {
-                    duration: 20,
+                    duration: 1,
                     x: mousePositionY * cameraMovementSpeedY,
                     ease: "power3.easeOut"
                 })
