@@ -10,12 +10,35 @@ import { useThree } from "@react-three/fiber";
 
 export default function Model(props) {
 
-  const { camera } = useThree()
-  camera.position.set(0.5, 1.5, 0)
-  camera.rotateY = Math.PI / 2
+  // Camera
+
+  // let orbit;
+
+  // document.addEventListener('mousemove', (e) => {
+  //   let scale = -0.01;
+  //   orbit.rotateY( e.movementX * scale );
+  //   orbit.rotateX( e.movementY * scale ); 
+  //   orbit.rotation.z = 0; //this is important to keep the camera level..
+  // })
+
+  // //the camera rotation pivot
+  // orbit = new THREE.Object3D();
+  // orbit.rotation.order = "YXZ"; //this is important to keep level, so Z should be the last axis to rotate in order...
+  // orbit.position.set(0,0,0)
+  // scene.add(orbit );
+
+  // const { camera } = useThree()
+  // camera.position.set(0.5, 1.5, 0)
+  // camera.rotateY = Math.PI / 2
+
+
+  // Load
 
   const group = useRef();
   const { nodes, materials } = useGLTF("/Garfield.gltf");
+
+
+  // Materials
 
   const map = useTexture('./textures/diffuse.jpg')
   map.flipY = false
@@ -32,20 +55,18 @@ export default function Model(props) {
   const lightmap = useTexture('./textures/lightmap.jpg')
   lightmap.flipY = false
 
+  const emissive = useTexture('./textures/emission.jpg')
+
   const material = materials["Null Texture"]
-  // const material = new THREE.MeshBasicMaterial
 
   material.map = map
-  // material.emissiveMap = map
+  material.emissiveMap = emissive
   material.roughnessMap = roughness
   material.metalnessMap = metalness
   material.normalMap = normal
   material.lightMap = lightmap
   material.lightMapIntensity = 2
 
-  // material.flatShading = true
-  console.log(material)
-  console.log(nodes.Joined001)
 
   return (
     <group ref={group} {...props} dispose={null} >
