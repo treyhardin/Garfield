@@ -19,7 +19,7 @@ export default function Hero() {
                     <Garfield 
                         position={[0,0,0]}
                     />
-                    <Environment preset="sunset" background />
+                    {/* <Environment preset="sunset" background /> */}
                 </Suspense>
 
 
