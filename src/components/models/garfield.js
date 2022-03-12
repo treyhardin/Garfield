@@ -56,6 +56,11 @@ export default function Model(props) {
   lightmap.flipY = false
 
   const emissive = useTexture('./textures/emission.jpg')
+  emissive.flipY = false
+
+  const ao = useTexture('./textures/ao.jpg')
+  ao.flipY = false
+
 
   const material = materials["Null Texture"]
 
@@ -66,6 +71,7 @@ export default function Model(props) {
   material.normalMap = normal
   material.lightMap = lightmap
   material.lightMapIntensity = 2
+  material.aoMap = ao
 
 
   return (

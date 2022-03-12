@@ -1,6 +1,21 @@
+* {
+  box-sizing: border-box;
+}
+
 :root {
   --color-ink: #0C0702;
   --color-reverse: #F0EBDB;
+
+  --size-xl: 120px;
+  --size-l: 60px;
+  --size-m: 30px;
+  --size-s: 15px;
+  --size-xs: 5px;
+
+  --font-family-heading: 'Editorial New', serif;
+  --font-family-body: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
 }
 
 html {
@@ -8,11 +23,42 @@ html {
   color: var(--color-reverse);
 }
 
+@font-face {
+  font-family: 'Editorial New';
+  src: url('./fonts/EditorialNew-Thin.woff2') format('woff2');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Editorial New';
+  src: url('./fonts/EditorialNew-Ultralight.woff2') format('woff2');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: var(--font-family-body);
+  src: url('./fonts/SpaceGrotesk-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Space Grotesk';
+  src: url('./fonts/SpaceGrotesk-Light.woff2') format('woff2');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: var(--font-family-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -20,4 +66,22 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-family-heading);
+}
+
+h1 {
+  font-size: 5rem;
+  line-height: 1;
+  letter-spacing: -0.1rem;
+  font-weight: 200;
 }

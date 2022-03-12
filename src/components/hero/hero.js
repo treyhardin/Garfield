@@ -18,7 +18,7 @@ export default function Hero() {
 
     const cameraGroup = useRef()
     const camera = useRef()
-    let cameraMovementSpeedX = 0.95;
+    let cameraMovementSpeedX = 0.85;
     let cameraMovementSpeedY = 0.25;
     let cameraOffsetY = - Math.PI / 0.95
 
@@ -53,7 +53,7 @@ export default function Hero() {
         <section className='hero-section'>
             <Canvas>
             <group ref={cameraGroup} position={[0,0.75,1.5]} rotation={[0, Math.PI, 0]}>  
-                <PerspectiveCamera ref={camera} makeDefault position={[0,0.5,2]} rotation={[-Math.PI * 0, 0, 0]} fov={65} />
+                <PerspectiveCamera ref={camera} makeDefault position={[0,0.5,2]} rotation={[-Math.PI * 0, 0, 0]} fov={60} />
             </group>  
             <Bloom
                 intensity={1.0} // The bloom intensity.

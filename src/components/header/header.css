@@ -3,5 +3,28 @@ header {
     top: 0;
     left: 0;
     right: 0;
+    width: 100vw;
+    height: 100vh;
+    padding: var(--size-m);
     z-index: 1;
+    display: flex;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.nav-top,
+.nav-bottom {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+
+.nav-link {
+    flex-grow: 0;
+    font-size: 3rem;
+    letter-spacing: -0.1rem;
 }

@@ -1,0 +1,11 @@
+.about-section {
+    padding: var(--size-m);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.about-text {
+    text-align: justify;
+}
