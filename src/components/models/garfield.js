@@ -66,6 +66,7 @@ export default function Model(props) {
 
   material.map = map
   material.emissiveMap = emissive
+  material.emissiveIntensity = 1000
   material.roughnessMap = roughness
   material.metalnessMap = metalness
   material.normalMap = normal

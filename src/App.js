@@ -10,19 +10,22 @@ import './locomotive-scroll.css'
 function App() {
 
   const locomotive = useRef(null)
+  console.log(locomotive)
 
   return (
     <LocomotiveScrollProvider
       options={
         {
           smooth: true,
+          lerp: 0.01
         }
       }
   containerRef={locomotive} >
     
-    <div className="App" ref={locomotive}>
+    <div data-scroll-container className="App" ref={locomotive}>
       <Header />
       <Hero />
+      <About />
       <About />
     </div>
 

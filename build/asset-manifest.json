@@ -1,13 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.35f0d0e0.css",
-    "main.js": "/static/js/main.0296886d.js",
+    "main.css": "/static/css/main.48c7ccf6.css",
+    "main.js": "/static/js/main.f9b49b68.js",
+    "static/media/SpaceGrotesk-Regular.woff2": "/static/media/SpaceGrotesk-Regular.9cde6a285f73a684e1b2.woff2",
+    "static/media/SpaceGrotesk-Light.woff2": "/static/media/SpaceGrotesk-Light.76ab3771d0b2cfa42eaf.woff2",
+    "static/media/EditorialNew-Ultralight.woff2": "/static/media/EditorialNew-Ultralight.1d3ba0eb56602500a736.woff2",
+    "static/media/EditorialNew-Thin.woff2": "/static/media/EditorialNew-Thin.c6cac0d430f6c32a639e.woff2",
     "index.html": "/index.html",
-    "main.35f0d0e0.css.map": "/static/css/main.35f0d0e0.css.map",
-    "main.0296886d.js.map": "/static/js/main.0296886d.js.map"
+    "main.48c7ccf6.css.map": "/static/css/main.48c7ccf6.css.map",
+    "main.f9b49b68.js.map": "/static/js/main.f9b49b68.js.map"
   },
   "entrypoints": [
-    "static/css/main.35f0d0e0.css",
-    "static/js/main.0296886d.js"
+    "static/css/main.48c7ccf6.css",
+    "static/js/main.f9b49b68.js"
   ]
 }

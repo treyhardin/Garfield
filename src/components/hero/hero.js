@@ -51,7 +51,7 @@ export default function Hero() {
 
     return (
         <section data-scroll-section className='hero-section'>
-            <Canvas>
+            <Canvas data-scroll>
             <group ref={cameraGroup} position={[0,0.75,1.5]} rotation={[0, Math.PI, 0]}>  
                 <PerspectiveCamera ref={camera} makeDefault position={[0,0.5,2]} rotation={[-Math.PI * 0, 0, 0]} fov={60} />
             </group>  
