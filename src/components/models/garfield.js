@@ -71,7 +71,7 @@ export default function Model(props) {
   material.normalMap = normal
   material.lightMap = lightmap
   material.lightMapIntensity = 2
-  material.aoMap = ao
+  // material.aoMap = ao
 
 
   return (

@@ -50,20 +50,20 @@ export default function Hero() {
     })
 
     return (
-        <section className='hero-section'>
+        <section data-scroll-section className='hero-section'>
             <Canvas>
             <group ref={cameraGroup} position={[0,0.75,1.5]} rotation={[0, Math.PI, 0]}>  
                 <PerspectiveCamera ref={camera} makeDefault position={[0,0.5,2]} rotation={[-Math.PI * 0, 0, 0]} fov={60} />
             </group>  
-            <Bloom
-                intensity={1.0} // The bloom intensity.
+            {/* <Bloom
+                intensity={10.0} // The bloom intensity.
                 blurPass={undefined} // A blur pass.
                 width={Resizer.AUTO_SIZE} // render width
                 height={Resizer.AUTO_SIZE} // render height
                 kernelSize={KernelSize.LARGE} // blur kernel size
-                luminanceThreshold={0.9} // luminance threshold. Raise this value to mask out darker elements in the scene.
+                luminanceThreshold={0.1} // luminance threshold. Raise this value to mask out darker elements in the scene.
                 luminanceSmoothing={0.025} // smoothness of the luminance threshold. Range is [0, 1]
-            />
+            /> */}
                     {/* <OrbitControls enableZoom={false} target={[0, .5, 2]} /> */}
 
                     <Suspense fallback={<Loader />}>

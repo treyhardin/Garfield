@@ -12,6 +12,7 @@ header {
     /* flex-wrap: wrap; */
     justify-content: space-between;
     align-items: stretch;
+    mix-blend-mode: difference;
 }
 
 .nav-top,
@@ -27,4 +28,9 @@ header {
     flex-grow: 0;
     font-size: 3rem;
     letter-spacing: -0.1rem;
+}
+
+.nav-link:hover {
+    mix-blend-mode: unset;
+    text-decoration: underline;
 }
