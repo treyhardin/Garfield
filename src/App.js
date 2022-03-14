@@ -17,7 +17,7 @@ function App() {
       options={
         {
           smooth: true,
-          lerp: 0.01
+          lerp: 0.085
         }
       }
   containerRef={locomotive} >

@@ -57,6 +57,7 @@ export default function Model(props) {
 
   const emissive = useTexture('./textures/emission.jpg')
   emissive.flipY = false
+  
 
   const ao = useTexture('./textures/ao.jpg')
   ao.flipY = false
@@ -66,13 +67,15 @@ export default function Model(props) {
 
   material.map = map
   material.emissiveMap = emissive
-  material.emissiveIntensity = 1000
+  material.emissiveIntensity = 10
   material.roughnessMap = roughness
   material.metalnessMap = metalness
   material.normalMap = normal
   material.lightMap = lightmap
-  material.lightMapIntensity = 2
+  material.lightMapIntensity = 1
   // material.aoMap = ao
+
+  console.log(material)
 
 
   return (
