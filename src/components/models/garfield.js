@@ -43,6 +43,9 @@ export default function Model(props) {
   const map = useTexture('./textures/diffuse.jpg')
   map.flipY = false
 
+  const arm = useTexture('./textures/arm.jpg')
+  arm.flipY = false
+
   const normal = useTexture('./textures/normal.jpg')
   normal.flipY = false
 
@@ -57,25 +60,33 @@ export default function Model(props) {
 
   const emissive = useTexture('./textures/emission.jpg')
   emissive.flipY = false
+
+  const tv = useTexture('./textures/tv.jpg')
+  // tv.flipY = false
   
 
-  const ao = useTexture('./textures/ao.jpg')
-  ao.flipY = false
+  // const ao = useTexture('./textures/ao.jpg')
+  // ao.flipY = false
 
 
   const material = materials["Null Texture"]
 
+
+  // material.emissive = new THREE.Color('red')
+
   material.map = map
   material.emissiveMap = emissive
-  material.emissiveIntensity = 10
-  material.roughnessMap = roughness
-  material.metalnessMap = metalness
+  material.emissiveIntensity = 1
   material.normalMap = normal
   material.lightMap = lightmap
-  material.lightMapIntensity = 1
-  // material.aoMap = ao
 
-  console.log(material)
+  // material.aoMap = arm
+  material.roughnessMap = arm
+  material.metalnessMap = arm
+
+  
+
+  // console.log(material)
 
 
   return (
@@ -84,6 +95,13 @@ export default function Model(props) {
         geometry={nodes.Joined001.geometry}
         material={material}
       />
+
+
+      <mesh position={[-0.165,1.06,2.22]} rotation={[0, Math.PI / 1, 0]}>
+        <planeGeometry args={[1.055,0.6]} />
+        <meshStandardMaterial emissive={'white'} emissiveMap={tv} emissiveIntensity={2} />
+     </mesh>
+
     </group>
   );
 }

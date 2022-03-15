@@ -1,16 +1,11 @@
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import React, {Suspense, useEffect, useRef} from 'react'
-import Loader from '../loader/loader'
 import Garfield from '../models/garfield'
-import Mug from '../models/mug'
 import { Environment, OrbitControls, useGLTF, Effects, PerspectiveCamera } from '@react-three/drei'
-import { Bloom } from '@react-three/postprocessing'
+import { EffectComposer, Noise, Bloom } from '@react-three/postprocessing'
 import './hero.css'
 import { gsap, ScrollTrigger, Draggable, MotionPathPlugin, Tween } from "gsap/all";
 
-
-import { BlurPass, Resizer, KernelSize } from 'postprocessing'
-import { Group } from 'three'
 
 export default function Hero() {
 
@@ -21,6 +16,7 @@ export default function Hero() {
     let cameraMovementSpeedX = 0.85;
     let cameraMovementSpeedY = 0.25;
     let cameraOffsetY = - Math.PI / 0.95
+
 
     document.addEventListener('mousemove', (e) => {
         
@@ -55,23 +51,20 @@ export default function Hero() {
             <group ref={cameraGroup} position={[0,0.75,1.5]} rotation={[0, Math.PI, 0]}>  
                 <PerspectiveCamera ref={camera} makeDefault position={[0,0.5,2]} rotation={[-Math.PI * 0, 0, 0]} fov={60} />
             </group>  
-            {/* <Bloom
-                intensity={10.0} // The bloom intensity.
-                blurPass={undefined} // A blur pass.
-                width={Resizer.AUTO_SIZE} // render width
-                height={Resizer.AUTO_SIZE} // render height
-                kernelSize={KernelSize.LARGE} // blur kernel size
-                luminanceThreshold={0.1} // luminance threshold. Raise this value to mask out darker elements in the scene.
-                luminanceSmoothing={0.025} // smoothness of the luminance threshold. Range is [0, 1]
-            /> */}
+            <EffectComposer>
+                <Bloom luminanceThreshold={0} luminanceSmoothing={0.9} intensity={1} height={300} />
+                <Noise opacity={0.03} />
+            </EffectComposer>
+
                     {/* <OrbitControls enableZoom={false} target={[0, .5, 2]} /> */}
 
-                    <Suspense fallback={<Loader />}>
+                    <Suspense fallback={null}>
                             
                         <Garfield 
                             position={[0,0,0]}
                         />
-                        {/* <Environment preset="sunset" background /> */}
+
+
                     </Suspense>
 
 
