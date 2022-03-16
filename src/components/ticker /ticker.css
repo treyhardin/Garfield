@@ -1,0 +1,67 @@
+:root {
+    /* --ticker-height: var(--size-m); */
+    --ticker-height: 30px;
+}
+
+.ticker-section {
+    height: var(--ticker-height);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: stretch;
+    align-items: stretch;
+    margin-top: calc(var(--ticker-height) * -1 - var(--size-m));
+    margin-left: var(--size-m);
+    margin-right: var(--size-m);
+    overflow: hidden;
+    color: var(--color-reverse);
+    border: 0.5px solid var(--color-reverse);
+    border-radius: 6px;
+    mix-blend-mode: difference;
+}
+
+
+
+.ticker-text-wrapper {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    overflow: hidden;
+}
+
+.ticker-text {
+    margin-right: var(--size-s);
+    flex-basis: auto;
+    flex-shrink: 0;
+    flex-grow: 0;
+    animation: ticker 12s linear 0s infinite;
+}
+
+@keyframes ticker {
+    from {
+        
+    }
+
+    to {
+
+    }
+}
+
+.ticker-icon {
+    padding-left: var(--size-xs);
+    padding-right: var(--size-xs);
+    flex-grow: 0;
+    flex-shrink: 0;
+    border-right: 1px solid var(--color-reverse);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ticker-section .icon {
+    --icon-size: 22px;
+    width: var(--icon-size);
+    height: var(--icon-size);
+}
