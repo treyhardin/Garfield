@@ -8,4 +8,7 @@
 
 .about-text {
     text-align: justify;
+    font-size: 9.4vw;
+    letter-spacing: -0.35vw;
+    line-height: 1.1;
 }

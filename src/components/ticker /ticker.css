@@ -32,20 +32,24 @@
 }
 
 .ticker-text {
-    margin-right: var(--size-s);
+    position: relative;
+    padding-right: var(--size-s);
     flex-basis: auto;
     flex-shrink: 0;
     flex-grow: 0;
-    animation: ticker 12s linear 0s infinite;
+    animation: ticker 12s linear 0s both infinite;
+    will-change: transform;
 }
 
 @keyframes ticker {
     from {
-        
+        /* transform: translateX(0%); */
+        left: -100%;
     }
 
     to {
-
+        /* transform: translateX(-100%); */
+        left: -200%;
     }
 }
 
