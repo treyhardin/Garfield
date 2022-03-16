@@ -1,7 +1,8 @@
 .hero-section {
+    /* height: calc(100vh - var(--ticker-height)); */
     height: 100vh;
 }
 
 canvas {
-    marging: 20px;
+    /* margin: 20px; */
 }

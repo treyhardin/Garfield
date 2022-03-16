@@ -61,6 +61,7 @@ body {
   font-family: var(--font-family-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 14px;
 }
 
 code {
@@ -84,4 +85,10 @@ h1 {
   line-height: 1;
   letter-spacing: -0.1rem;
   font-weight: 200;
+}
+
+.utility {
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  font-size: 0.6rem;
 }

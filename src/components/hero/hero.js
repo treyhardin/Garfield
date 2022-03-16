@@ -9,8 +9,6 @@ import { gsap, ScrollTrigger, Draggable, MotionPathPlugin, Tween } from "gsap/al
 
 export default function Hero() {
 
-    console.log(gsap)
-
     const cameraGroup = useRef()
     const camera = useRef()
     let cameraMovementSpeedX = 0.85;
@@ -48,24 +46,21 @@ export default function Hero() {
     return (
         <section data-scroll-section className='hero-section'>
             <Canvas data-scroll>
-            <group ref={cameraGroup} position={[0,0.75,1.5]} rotation={[0, Math.PI, 0]}>  
-                <PerspectiveCamera ref={camera} makeDefault position={[0,0.5,2]} rotation={[-Math.PI * 0, 0, 0]} fov={60} />
-            </group>  
-            <EffectComposer>
-                <Bloom luminanceThreshold={0} luminanceSmoothing={0.9} intensity={1} height={300} />
-                <Noise opacity={0.03} />
-            </EffectComposer>
 
-                    {/* <OrbitControls enableZoom={false} target={[0, .5, 2]} /> */}
+                <group ref={cameraGroup} position={[0,0.75,1.5]} rotation={[0, Math.PI, 0]}>  
+                    <PerspectiveCamera ref={camera} makeDefault position={[0,0.5,2]} rotation={[-Math.PI * 0, 0, 0]} fov={60} />
+                </group>  
 
-                    <Suspense fallback={null}>
-                            
-                        <Garfield 
-                            position={[0,0,0]}
-                        />
+                <EffectComposer>
+                    <Bloom luminanceThreshold={0} luminanceSmoothing={0.9} intensity={0.5} height={300} />
+                    <Noise opacity={0.03} />
+                </EffectComposer>
 
+                {/* <OrbitControls enableZoom={false} target={[0, .5, 2]} /> */}
 
-                    </Suspense>
+                <Suspense fallback={null}>
+                    <Garfield position={[0,0,0]} />
+                </Suspense>
 
 
             </Canvas>

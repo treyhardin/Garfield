@@ -14,10 +14,10 @@ export default function Header() {
                 <a href="#" className='nav-link'>Work</a>
                 <a href="#" className='nav-link'>About</a>
             </span>
-            <span className='nav-bottom'>
+            {/* <span className='nav-bottom'>
                 <a href="#" className='nav-link'>©2022</a>
                 <a href="#" className='nav-link'>Contact</a>
-            </span>
+            </span> */}
         </header>
     )
 }

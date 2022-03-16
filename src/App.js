@@ -6,6 +6,7 @@ import { LocomotiveScrollProvider } from 'react-locomotive-scroll'
 import { useRef } from 'react';
 
 import './locomotive-scroll.css'
+import Ticker from './components/ticker / ticker';
 
 function App() {
 
@@ -25,7 +26,7 @@ function App() {
     <div data-scroll-container className="App" ref={locomotive}>
       <Header />
       <Hero />
-      <About />
+      <Ticker text="Trey Hardin is a Creative Director based in New York City." />
       <About />
     </div>
 
