@@ -7,7 +7,7 @@
     right: 0;
     bottom: 0;
     left: 0;
-    background-color: green;
+    background-color: var(--color-ink);
     z-index: 99;
 }
 

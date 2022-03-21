@@ -8,19 +8,26 @@ export default function Loader() {
 
     const [loadProgress, setLoadProgress] = useState(null)
 
+
     const loaderRef = useRef(null)
 
-    let loadPercentage = loaded / total
-
     const hideLoader = () => {
-
         loaderRef.current.classList.remove("active")
     }
 
+    THREE.DefaultLoadingManager.onLoad = () => {
+        console.log('loaded')
+    }
+
+    // THREE.DefaultLoadingManager.onProgress = (e) => {
+    //     console.log(`${e.itemsLoaded} of ${e.itemsTotal} loaded`)
+    // }
+
     useEffect(() => {
 
-        setLoadProgress(loaded / total)
-        if (loadProgress >= 1) {
+        // setLoadProgress(loaded / total)
+        // console.log(total)
+        if (loaded >= total) {
             hideLoader()
         }   
             
@@ -28,9 +35,7 @@ export default function Loader() {
 
     return (
         <div className='loader active' ref={loaderRef}>
-            <p>Loaded: {loaded}</p>
-            <p>Total: {total}</p>
-
+            <p>Loaded {loaded} of {total}</p>
         </div>
     )
 }

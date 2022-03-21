@@ -28,26 +28,13 @@ export default function Model(props) {
   roughness.flipY = false
   roughness.magFilter = THREE.LinearFilter
 
-  const ao = useTexture('./textures/ao.jpg')
-  ao.flipY = false
-  ao.magFilter = THREE.LinearFilter
-
   const lightmap = useTexture('./textures/lightmap.jpg')
   lightmap.flipY = false
   lightmap.magFilter = THREE.LinearFilter
-  
 
-  // const lofi = useTexture('./textures/lofi.gif') 
-  // lofi.flipY = false
-  // lofi.magFilter = THREE.LinearFilter
-
-
-  //Get your video element:
   const video = document.getElementById('lofi-video');
   const videoTexture = new THREE.VideoTexture(video);
   videoTexture.encoding = THREE.sRGBEncoding
-  // const videoMaterial =  new THREE.MeshBasicMaterial( {map: videoTexture, side: THREE.FrontSide, toneMapped: false} );
-
 
 
   // Materials
@@ -57,7 +44,6 @@ export default function Model(props) {
   material.map = map
   material.lightMap = lightmap
   material.lightMapIntensity = 0.8
-  // material.aoMap = ao
   material.roughnessMap = roughness
   material.metalness = 0
 
