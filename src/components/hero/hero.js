@@ -45,18 +45,17 @@ export default function Hero() {
 
     return (
         <section data-scroll-section className='hero-section'>
+            <video id="lofi-video" playsInline webkit-playsinline="true" muted loop autoPlay width="320" height="240" src="textures/lofi.mp4"></video>
             <Canvas data-scroll>
 
-                <group ref={cameraGroup} position={[0,0.75,1.5]} rotation={[0, Math.PI, 0]}>  
+                <group ref={cameraGroup} position={[0,0.75,1.5]} rotation={[0, -Math.PI, 0]}>  
                     <PerspectiveCamera ref={camera} makeDefault position={[0,0.5,2]} rotation={[-Math.PI * 0, 0, 0]} fov={60} />
                 </group>  
 
                 <EffectComposer>
-                    <Bloom luminanceThreshold={0} luminanceSmoothing={0.9} intensity={0.5} height={300} />
+                    <Bloom luminanceThreshold={0} luminanceSmoothing={0.5} intensity={0.6} height={300} />
                     <Noise opacity={0.03} />
                 </EffectComposer>
-
-                {/* <OrbitControls enableZoom={false} target={[0, .5, 2]} /> */}
 
                 <Suspense fallback={null}>
                     <Garfield position={[0,0,0]} />

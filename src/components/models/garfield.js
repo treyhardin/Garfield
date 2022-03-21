@@ -10,26 +10,6 @@ import { useThree } from "@react-three/fiber";
 
 export default function Model(props) {
 
-  // Camera
-
-  // let orbit;
-
-  // document.addEventListener('mousemove', (e) => {
-  //   let scale = -0.01;
-  //   orbit.rotateY( e.movementX * scale );
-  //   orbit.rotateX( e.movementY * scale ); 
-  //   orbit.rotation.z = 0; //this is important to keep the camera level..
-  // })
-
-  // //the camera rotation pivot
-  // orbit = new THREE.Object3D();
-  // orbit.rotation.order = "YXZ"; //this is important to keep level, so Z should be the last axis to rotate in order...
-  // orbit.position.set(0,0,0)
-  // scene.add(orbit );
-
-  // const { camera } = useThree()
-  // camera.position.set(0.5, 1.5, 0)
-  // camera.rotateY = Math.PI / 2
 
 
   // Load
@@ -38,68 +18,73 @@ export default function Model(props) {
   const { nodes, materials } = useGLTF("/Garfield.gltf");
 
 
-  // Materials
+  // Textures
 
   const map = useTexture('./textures/diffuse.jpg')
   map.flipY = false
-
-  const arm = useTexture('./textures/arm.jpg')
-  arm.flipY = false
-
-  const normal = useTexture('./textures/normal.jpg')
-  normal.flipY = false
+  map.magFilter = THREE.LinearFilter
 
   const roughness = useTexture('./textures/roughness.jpg')
   roughness.flipY = false
+  roughness.magFilter = THREE.LinearFilter
 
-  const metalness = useTexture('./textures/metalness.jpg')
-  metalness.flipY = false
+  const ao = useTexture('./textures/ao.jpg')
+  ao.flipY = false
+  ao.magFilter = THREE.LinearFilter
 
   const lightmap = useTexture('./textures/lightmap.jpg')
   lightmap.flipY = false
-
-  const emissive = useTexture('./textures/emission.jpg')
-  emissive.flipY = false
-
-  const tv = useTexture('./textures/tv.jpg')
-  // tv.flipY = false
+  lightmap.magFilter = THREE.LinearFilter
   
 
-  // const ao = useTexture('./textures/ao.jpg')
-  // ao.flipY = false
+  // const lofi = useTexture('./textures/lofi.gif') 
+  // lofi.flipY = false
+  // lofi.magFilter = THREE.LinearFilter
 
 
-  const material = materials["Null Texture"]
+  //Get your video element:
+  const video = document.getElementById('lofi-video');
+  const videoTexture = new THREE.VideoTexture(video);
+  videoTexture.encoding = THREE.sRGBEncoding
+  // const videoMaterial =  new THREE.MeshBasicMaterial( {map: videoTexture, side: THREE.FrontSide, toneMapped: false} );
 
 
-  // material.emissive = new THREE.Color('red')
+
+  // Materials
+  
+  const material = materials["Base Material"]
 
   material.map = map
-  material.emissiveMap = emissive
-  material.emissiveIntensity = 1
-  material.normalMap = normal
   material.lightMap = lightmap
+  material.lightMapIntensity = 0.8
+  // material.aoMap = ao
+  material.roughnessMap = roughness
+  material.metalness = 0
 
-  // material.aoMap = arm
-  material.roughnessMap = arm
-  material.metalnessMap = arm
 
+  const tvMaterial = new THREE.MeshBasicMaterial()
+
+  tvMaterial.map = videoTexture
+  tvMaterial.emissiveMap = videoTexture
+  tvMaterial.side = THREE.FrontSide
+  tvMaterial.toneMapped = false
   
 
-  // console.log(material)
 
 
   return (
     <group ref={group} {...props} dispose={null} >
       <mesh
-        geometry={nodes.Joined001.geometry}
+        geometry={nodes.Garfield_Joined001.geometry}
         material={material}
       />
 
-
-      <mesh position={[-0.165,1.06,2.22]} rotation={[0, Math.PI / 1, 0]}>
+      <mesh 
+        position={[-0.165,1.06,2.22]} 
+        rotation={[0, Math.PI, 0]}
+        material={tvMaterial}
+        >
         <planeGeometry args={[1.055,0.6]} />
-        <meshStandardMaterial emissive={'white'} emissiveMap={tv} emissiveIntensity={2} />
      </mesh>
 
     </group>

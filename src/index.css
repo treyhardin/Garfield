@@ -12,6 +12,8 @@
   --size-s: 15px;
   --size-xs: 5px;
 
+  --anim-duration-short: 300ms; 
+
   --font-family-heading: 'Editorial New', serif;
   --font-family-body: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
   'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
