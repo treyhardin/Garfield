@@ -28,14 +28,18 @@ export default function Loader() {
         // setLoadProgress(loaded / total)
         // console.log(total)
         if (loaded >= total) {
-            hideLoader()
+            setTimeout(() => {
+                hideLoader()
+            }, 1000);
+            
         }   
             
     }, [loaded]);
 
     return (
         <div className='loader active' ref={loaderRef}>
-            <p>Loaded {loaded} of {total}</p>
+            <h1>I Need a Better Preloader 😬</h1> 
+            <p>Loaded {loaded} assets of {total}</p>
         </div>
     )
 }

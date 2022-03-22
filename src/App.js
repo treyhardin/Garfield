@@ -29,7 +29,7 @@ function App() {
       <Loader />
       <Header />
       <Hero />
-      <Ticker text="Trey Hardin is a Creative Director based in New York City." />
+      <Ticker text="Garfield is just an experiment in semi-realistic 3D rendering in-browser. For now. &nbsp;" />
       <About />
     </div>
 
