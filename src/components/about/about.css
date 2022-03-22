@@ -12,3 +12,14 @@
     letter-spacing: -0.35vw;
     line-height: 1.1;
 }
+
+.about-text a {
+    text-decoration: underline;
+    text-decoration-thickness: 8px;
+    text-decoration-color: #e77e33;
+    transition: all var(--anim-duration-short) ease-out;
+}
+
+.about-text a:hover {
+    color: #e77e33;
+}
