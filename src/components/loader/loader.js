@@ -4,9 +4,11 @@ import { useEffect, useRef, useState } from "react"
 import './loader.css'
 
 export default function Loader() {
-    const { active, progress, errors, item, loaded, total } = useProgress()
+    const { active, errors, item, loaded, total } = useProgress()
 
     const [loadProgress, setLoadProgress] = useState(null)
+
+    const progress = loaded / total * 100
 
 
     const loaderRef = useRef(null)
@@ -19,14 +21,8 @@ export default function Loader() {
         console.log('loaded')
     }
 
-    // THREE.DefaultLoadingManager.onProgress = (e) => {
-    //     console.log(`${e.itemsLoaded} of ${e.itemsTotal} loaded`)
-    // }
-
     useEffect(() => {
 
-        // setLoadProgress(loaded / total)
-        // console.log(total)
         if (loaded >= total) {
             setTimeout(() => {
                 hideLoader()
@@ -38,8 +34,10 @@ export default function Loader() {
 
     return (
         <div className='loader active' ref={loaderRef}>
-            <h1>I Need a Better Preloader 😬</h1> 
-            <p>Loaded {loaded} assets of {total}</p>
+            <h1>Come On In.</h1>
+            <div className='progress-bar'>
+                <div className='progress' style={{width: progress + "%"}}></div>
+            </div>
         </div>
     )
 }

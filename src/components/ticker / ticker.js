@@ -30,7 +30,7 @@ export default function Ticker(props) {
                 <Hand />
             </span>
             <span className='ticker-text-wrapper'>
-                <p data-scroll data-scroll-speed="8" data-scroll-direction="horizontal" ref={tickerText} data-scroll className='ticker-text utility'>{props.text}</p>       
+                <p data-scroll data-scroll-speed="8" data-scroll-direction="horizontal" ref={tickerText} data-scroll className='ticker-text'>{props.text}</p>       
             </span>
         </section>
     )

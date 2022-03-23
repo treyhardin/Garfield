@@ -1,6 +1,6 @@
 :root {
     /* --ticker-height: var(--size-m); */
-    --ticker-height: 30px;
+    --ticker-height: 50px;
 }
 
 .ticker-section {
@@ -10,14 +10,16 @@
     flex-wrap: nowrap;
     justify-content: stretch;
     align-items: stretch;
-    margin-top: calc(var(--ticker-height) * -1 - var(--size-m));
-    margin-left: var(--size-m);
-    margin-right: var(--size-m);
+    /* margin-top: calc(var(--ticker-height) * -1 - var(--size-m)); */
+    margin-top: calc(var(--ticker-height) * -1);
+    /* margin-left: var(--size-m); */
+    /* margin-right: var(--size-m); */
     overflow: hidden;
     color: var(--color-reverse);
-    border: 0.5px solid var(--color-reverse);
-    border-radius: 6px;
-    mix-blend-mode: difference;
+    border-top: 1px solid var(--color-reverse);
+    border-bottom: 1px solid var(--color-reverse);
+    /* border-radius: 6px; */
+    /* mix-blend-mode: difference; */
 }
 
 
@@ -56,6 +58,7 @@
 }
 
 .ticker-icon {
+    width: var(--ticker-height);
     padding-left: var(--size-xs);
     padding-right: var(--size-xs);
     flex-grow: 0;

@@ -44,7 +44,8 @@ export default function Hero() {
     })
 
     return (
-        <section data-scroll-section className='hero-section'>
+        // <div data-scroll id="hero-wrapper">
+        <section data-scroll-section data-scroll-sticky data-scroll-target="#hero-wrapper" className='hero-section'>
             <video id="lofi-video" playsInline webkit-playsinline="true" muted loop autoPlay width="320" height="240" src="textures/lofi.mp4"></video>
             <Canvas data-scroll>
 
@@ -64,5 +65,6 @@ export default function Hero() {
 
             </Canvas>
         </section>
+        // </div>
     )
 }

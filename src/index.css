@@ -5,6 +5,7 @@
 :root {
   --color-ink: #1F1307;
   --color-reverse: #F0EBDB;
+  --color-primary: #957D4E;
 
   --size-xl: 120px;
   --size-l: 60px;
@@ -12,6 +13,7 @@
   --size-s: 15px;
   --size-xs: 5px;
 
+  --anim-easing: cubic-bezier(0.25, 1, 0.5, 1);
   --anim-duration-short: 300ms; 
 
   --font-family-heading: 'Editorial New', serif;
@@ -87,6 +89,7 @@ h1 {
   line-height: 1;
   letter-spacing: -0.1rem;
   font-weight: 200;
+  margin-bottom: 0.4em;
 }
 
 .utility {
