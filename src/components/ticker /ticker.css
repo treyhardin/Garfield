@@ -34,6 +34,7 @@
 }
 
 .ticker-text {
+    font-size: 0.7rem;
     box-sizing: content-box;
     position: relative;
     /* padding: 0 var(--size-xs); */

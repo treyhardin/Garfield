@@ -29,7 +29,7 @@ export default function Ticker(props) {
             <span className='ticker-icon'>
                 <Hand />
             </span>
-            <span className='ticker-text-wrapper'>
+            <span className='ticker-text-wrapper utility'>
                 <p data-scroll data-scroll-speed="8" data-scroll-direction="horizontal" ref={tickerText} data-scroll className='ticker-text'>{props.text}</p>       
             </span>
         </section>
