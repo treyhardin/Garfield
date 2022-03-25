@@ -18,7 +18,7 @@ export default function Loader() {
     }
 
     THREE.DefaultLoadingManager.onLoad = () => {
-        console.log('loaded')
+        // console.log('loaded')
     }
 
     useEffect(() => {

@@ -5,15 +5,35 @@ import { Environment, OrbitControls, useGLTF, Effects, PerspectiveCamera } from 
 import { EffectComposer, Noise, Bloom } from '@react-three/postprocessing'
 import './hero.css'
 import { gsap, ScrollTrigger, Draggable, MotionPathPlugin, Tween } from "gsap/all";
+import { useLocomotiveScroll } from 'react-locomotive-scroll'
 
 
 export default function Hero() {
+
+
 
     const cameraGroup = useRef()
     const camera = useRef()
     let cameraMovementSpeedX = 0.85;
     let cameraMovementSpeedY = 0.25;
     let cameraOffsetY = - Math.PI / 0.95
+
+
+    let currentScroll = 0
+    const scroll = useLocomotiveScroll()
+
+    document.addEventListener('scroll', (e) => {
+        if (scroll.isReady) {
+          currentScroll = scroll.scroll.scroll.instance.scroll.y
+
+          // Move Camera with Scroll
+          if(cameraGroup.current) {
+            cameraGroup.current.position.y = 0.75 - currentScroll * 0.0015
+          }
+        }
+    })
+
+
 
 
     document.addEventListener('mousemove', (e) => {
@@ -45,8 +65,8 @@ export default function Hero() {
 
     return (
         // <div data-scroll id="hero-wrapper">
-        <section data-scroll-section data-scroll-sticky data-scroll-target="#hero-wrapper" className='hero-section'>
-            <video id="lofi-video" playsInline webkit-playsinline="true" muted loop autoPlay width="320" height="240" src="textures/lofi.mp4"></video>
+        <section data-scroll-section className='hero-section'>
+            <video data-scroll id="lofi-video" playsInline webkit-playsinline="true" muted loop autoPlay width="320" height="240" src="textures/lofi.mp4"></video>
             <Canvas data-scroll>
 
                 <group ref={cameraGroup} position={[0,0.75,1.5]} rotation={[0, -Math.PI, 0]}>  
@@ -59,7 +79,7 @@ export default function Hero() {
                 </EffectComposer>
 
                 <Suspense fallback={null}>
-                    <Garfield position={[0,0,0]} />
+                    <Garfield position={[0,0,0]} scrollObject={scroll} />
                 </Suspense>
 
 

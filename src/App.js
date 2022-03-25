@@ -5,7 +5,6 @@ import Hero from './components/hero/hero';
 import { LocomotiveScrollProvider } from 'react-locomotive-scroll'
 import { useRef } from 'react';
 import Loader from './components/loader/loader'
-
 import './locomotive-scroll.css'
 import Ticker from './components/ticker / ticker';
 
@@ -21,7 +20,7 @@ function App() {
           lerp: 0.085
         }
       }
-  containerRef={locomotive} >
+      containerRef={locomotive} >
 
     
     
